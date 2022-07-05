@@ -37,7 +37,7 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;background: white;">
-            <a href="index.html" class="site_title"><img src="images/cognizant-vector-logo.png" alt="..."
+            <a href="index.html" class="site_title"><img src="images/ServiceNow-Logo.png" alt="..."
                 height="100%" /></a>
           </div>
 
@@ -306,7 +306,7 @@
           <div class="col-md-6 col-sm-6 ">
             <div class="x_panel tile overflow_hidden">
               <div class="x_title">
-                <h2>Departments - Bar chart</h2>
+                <h2>Departments</h2>
                 <ul class="nav navbar-right panel_toolbox">
                   <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                   </li>
@@ -315,33 +315,24 @@
                 </ul>
                 <div class="clearfix"></div>
               </div>
-              <div class="x_content" style="width: 100%;height: 100%;">
+              <div class="x_content" style="width: 100%;height: 400px;">
                 <canvas id="departments" style="margin: 15px 10px 10px 0" width="200" height="300"></canvas>
               </div>
             </div>
           </div>
-
           <div class="col-md-6 col-sm-6 ">
-            <div class="x_panel tile fixed_height_320 overflow_hidden">
+            <div class="x_panel tile overflow_hidden">
               <div class="x_title">
-                <h2>Project cause</h2>
+                <h2>Month-wise Volunteers</h2>
                 <ul class="nav navbar-right panel_toolbox">
                   <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i
-                        class="fa fa-wrench"></i></a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Settings 1</a>
-                      <a class="dropdown-item" href="#">Settings 2</a>
-                    </div>
                   </li>
                   <li><a class="close-link"><i class="fa fa-close"></i></a>
                   </li>
                 </ul>
                 <div class="clearfix"></div>
               </div>
-              <div class="x_content">
+              <div class="x_content" style="width: 100%;height: 400px;">
                 <canvas id="location" style="margin: 15px 10px 10px 0"></canvas>
               </div>
             </div>
@@ -548,7 +539,7 @@
       data: {
         labels: ["Operations", "Sales", "HR", "Finance", "IT"],
         datasets: [{
-          data: [12, 19, 3, 5, 20],
+          data: [12, 19, 7, 9, 20],
           backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(54, 162, 235, 0.2)',
@@ -590,7 +581,7 @@
       data: {
         labels: ["Operations", "Sales", "Resources", "Finance", "IT"],
         datasets: [{
-          data: [36,10,34,8,12],
+          data: [36, 10, 34, 8, 12],
           backgroundColor: [
             '#3498DB',
             '#1ABB9C',
@@ -619,31 +610,21 @@
   </script>
   <script>
     const ctx2 = document.getElementById('location');
+    const labels = ["Jan", "Feb", "Mar", "Apr", "May"];
     const myChart2 = new Chart(ctx2, {
-      type: 'bubble',
+      type: 'line',
       data: {
-        labels: "Operations",
+        labels: labels,
         datasets: [{
-        data: [{
-          x: 20,
-          y: 30,
-          r: 15 
-        },
-        {
-          x: 15,
-          y: 3,
-          r: 5 
+          data: [65, 59, 80, 81, 56],
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
         }]
-      }]
       },
       options: {
+        responsive: true,
         maintainAspectRatio: false,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        },
-
         legend: {
           display: false
         }
